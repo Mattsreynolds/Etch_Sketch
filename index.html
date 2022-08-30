@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="zreset.css">
 </head>
 <body>
-    <div class="flex-container">    
-        <div class="title"><h1>Etch a Sketch</h1></div>    
-        <div class="content">
-            <div class="board"></div>
-            <div class="buttons">
-            <button>Grid Size</button>
+    <div class="flex-container"> 
+        <div class ="box">   
+            <div class="title"><h1>Etch a Sketch</h1></div>    
+            <div class="content">
+                <div class="board"></div>
+                <div class="buttons">
+                <button id="userinput">Grid Size</button>
+                <button id="userrgb" value="NO" onclick="rgb()">RGB</button>
+                </div>
             </div>
         </div>
     </div>  
