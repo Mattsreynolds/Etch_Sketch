@@ -1,6 +1,5 @@
-//let color = 'black';
-let t;
-let square;
+let color = 'black';
+let t = document.getElementById("userrgb");
 
 function populate(size) {
     let board = document.querySelector('.board');
@@ -10,9 +9,12 @@ function populate(size) {
     
     for (let i = 0; i < size * size; i++) {
         let square = document.createElement("div");
-        square.addEventListener('mouseover', changeColor) //=> {
-        
-       // });          
+        square.addEventListener('mouseover', changeColor); 
+        // => {
+        //     square.style.backgroundColor = 
+        //     '#'+Math.floor(Math.random()*16777215).toString(16);
+        // });        
+        square.style.backgroundColor = 'lightgray'; 
         board.append(square);
     }
 }
@@ -32,20 +34,26 @@ if (userNumber > 1 && userNumber < 101) {
 });
 
 function rgb() {
-    let t = document.getElementById("userrgb");
     if(t.value=="YES"){
-        t.value="NO";}
-    else if(t.value=="NO"){
-        t.value="YES";}
-    console.log(t);
+        t.value="NO";
+        let element = document.getElementById("userrgb");
+        element.classList.remove("color");
+    }else if(t.value=="NO"){
+        t.value="YES";
+        let element = document.getElementById("userrgb");
+        element.classList.add("color");
+    }
+    
 }
 
 function changeColor() {
-    if (t == "YES") {
-        square.style.backgroundColor = 
-            '#'+Math.floor(Math.random()*16777215).toString(16);
+    if (t.value=="NO") {
+        this.style.backgroundColor = color;
+        
     } else {
-        square.style.backgroundColor = 'lightgray'; 
+        this.style.backgroundColor = 
+            '#'+Math.floor(Math.random()*16777215).toString(16);
+            
     }
 
 }
